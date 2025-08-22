@@ -106,7 +106,7 @@ class SettledResult implements Responsable, ResultContract
 
         throw new LambdaExecutionException(sprintf('Lambda Execution Exception for %s: "%s".', ...[
             get_class($this->function),
-            $this->errorAsString($numberOfBacktraces)
+            $this->errorAsString($numberOfBacktraces ?? 2)
         ]));
     }
 

@@ -99,7 +99,7 @@ class SettledResult implements Responsable, ResultContract
      *
      * @throws Exception
      */
-    public function throw(?int $numberOfBacktraces)
+    public function throw(?int $numberOfBacktraces = null)
     {
         if (!$this->isError()) {
             return $this;
@@ -107,7 +107,7 @@ class SettledResult implements Responsable, ResultContract
 
         throw new LambdaExecutionException(sprintf('Lambda Execution Exception for %s: "%s".', ...[
             get_class($this->function),
-            $this->errorAsString($numberOfBacktraces)
+            $this->errorAsString($numberOfBacktraces ?? 2)
         ]));
     }
 

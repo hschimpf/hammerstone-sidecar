@@ -41,8 +41,7 @@ class EnvironmentMismatchTest extends Base
             ->andThrow($this->notFoundException());
     }
 
-    /** @test */
-    public function it_throws_the_right_exception()
+    public function test_it_throws_the_right_exception()
     {
         $this->mockInvokeNonExistent();
 

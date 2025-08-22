@@ -78,8 +78,7 @@ class ExecuteMultipleTest extends Base
             ->andReturn($result);
     }
 
-    /** @test */
-    public function execute_many_by_function()
+    public function test_execute_many_by_function()
     {
         $this->mockMultiple();
 
@@ -94,8 +93,7 @@ class ExecuteMultipleTest extends Base
         $this->assertEvents(3);
     }
 
-    /** @test */
-    public function execute_many_by_facade()
+    public function test_execute_many_by_facade()
     {
         $this->mockMultiple();
 
@@ -110,8 +108,7 @@ class ExecuteMultipleTest extends Base
         $this->assertEvents(3);
     }
 
-    /** @test */
-    public function execute_many_by_facade_with_instantiated_class()
+    public function test_execute_many_by_facade_with_instantiated_class()
     {
         $this->mockMultiple();
 
@@ -126,8 +123,7 @@ class ExecuteMultipleTest extends Base
         $this->assertEvents(3);
     }
 
-    /** @test */
-    public function execute_many_by_function_int()
+    public function test_execute_many_by_function_int()
     {
         $result = Mockery::mock(PromiseInterface::class)
             ->shouldReceive('wait')
@@ -144,8 +140,7 @@ class ExecuteMultipleTest extends Base
         $this->assertEvents(5);
     }
 
-    /** @test */
-    public function execute_many_by_facade_int()
+    public function test_execute_many_by_facade_int()
     {
         $result = Mockery::mock(PromiseInterface::class)
             ->shouldReceive('wait')
@@ -162,8 +157,7 @@ class ExecuteMultipleTest extends Base
         $this->assertEvents(5);
     }
 
-    /** @test */
-    public function execute_many_by_facade_int_with_instantiated_class()
+    public function test_execute_many_by_facade_int_with_instantiated_class()
     {
         $result = Mockery::mock(PromiseInterface::class)
             ->shouldReceive('wait')
@@ -180,8 +174,7 @@ class ExecuteMultipleTest extends Base
         $this->assertEvents(5);
     }
 
-    /** @test */
-    public function execute_many_async_by_function()
+    public function test_execute_many_async_by_function()
     {
         $result = Mockery::mock(PromiseInterface::class)
             ->shouldNotReceive('wait')

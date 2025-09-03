@@ -85,7 +85,7 @@ class Manager
         try {
             $result = app(LambdaClient::class)->{$method}([
                 // Function name plus our alias name.
-                'FunctionName' => $function->nameWithPrefix() . ':' . $this->executionVersion,
+                'FunctionName' => $function->nameWithPrefix(), // . ':' . $this->executionVersion,
 
                 // `RequestResponse` is a synchronous call, vs `Event` which
                 // is a fire-and-forget, we can make it async by using the
